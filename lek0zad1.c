@@ -5,7 +5,7 @@
 
 void isPrime(bool c) { //функция за извеждане на резултат дали числото е просто или не чрез указател bool c.
     if (c) { 
-        printf("The number is prime\n"); //понеже разботим с boolean указател, ако той е True, значи ще изведе текста.
+        printf("The number is prime\n"); //понеже разботим с boolean оператор, ако той е True, значи ще изведе текста.
     } else { 
         printf("The number is not prime\n"); //тук е обратното.
     }
