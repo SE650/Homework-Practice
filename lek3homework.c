@@ -47,6 +47,31 @@ void save_results(char* filename, char* text) {
     fclose(fp);
 }
 
+int* count_frequencies(char* cipher) {
+
+    int* frequency = (int*) malloc(sizeof(int) * 26);
+    memset(frequency, 0, sizeof(int) * 26);
+    int length = strlen(cipher);
+    for(int i = 0; i < length; i++){
+        int position = tolower(cipher[i]) - 'a';
+        frequency[position]++;
+    }
+
+    return frequency;
+}
+
+int get_max_index(int* frequencies){
+    int max_index = 0;
+    for(int i = 0; i < 26; i++)
+    {
+        if(frequencies[i] > frequencies[max_index])
+        {
+            max_index = i;
+        }
+    }
+    return max_index;
+}
+
 int main () {
     char filename[MAXN];
     char cipher[MAXN];
